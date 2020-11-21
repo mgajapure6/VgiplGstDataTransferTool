@@ -1,0 +1,36 @@
+.err{
+    -fx-text-fill: #ff3535;
+    -fx-font-size: 12px;
+}
+
+.lbl{
+    -fx-font-size: 15px;
+}
+
+.small{
+    -fx-font-size: 12px;
+}
+
+.red-txt{
+    -fx-text-fill: red;
+}
+
+.green-txt{
+    -fx-text-fill: green;
+}
+
+.bold{
+    -fx-font-weight : bold;
+}
+
+.connectingErr{
+    -fx-text-fill: #ff3535;
+    -fx-font-size: 15px;
+    -fx-padding: 10;
+}
+
+.dataPostMsg{
+    -fx-text-fill: #ff3535;
+    -fx-font-size: 13px;
+    -fx-font-weight : bold;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="VgiplGstDataTransferTool.jnlp">
+  <information>
+    <title>VgiplGstDataTransferTool</title>
+    <vendor>Virtual Galaxy Infotech</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="VgiplGstDataTransferTool.jar" size="166164" download="eager" />
+    <jar href="lib\animatefx-1.2.0.jar" size="85592" download="eager" />
+    <jar href="lib\commons-codec-1.11.jar" size="335042" download="eager" />
+    <jar href="lib\commons-collections-3.2.2.jar" size="588337" download="eager" />
+    <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="lib\commons-configuration-1.8.jar" size="354491" download="eager" />
+    <jar href="lib\commons-httpclient-1.0.jar" size="59999" download="eager" />
+    <jar href="lib\commons-io-2.6.jar" size="214788" download="eager" />
+    <jar href="lib\commons-lang-2.6.jar" size="284220" download="eager" />
+    <jar href="lib\commons-logging-1.2 (1).jar" size="61829" download="eager" />
+    <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib\dom4j-1.6.1.jar" size="313898" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\gson-2.2.2.jar" size="189285" download="eager" />
+    <jar href="lib\httpclient-4.5.10.jar" size="774640" download="eager" />
+    <jar href="lib\httpcore-4.4.12.jar" size="328347" download="eager" />
+    <jar href="lib\jfoenix-0.0.0-SNAPSHOT.jar" size="2685623" download="eager" />
+    <jar href="lib\jsqlparser-3.2.jar" size="534989" download="eager" />
+    <jar href="lib\log4j-1.2.17.jar" size="489884" download="eager" />
+    <jar href="lib\mssql-jdbc-7.4.1.jre8.jar" size="1209659" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.46.jar" size="1004838" download="eager" />
+    <jar href="lib\ojdbc7.jar" size="3397734" download="eager" />
+    <jar href="lib\poi-4.0.0.jar" size="2715721" download="eager" />
+    <jar href="lib\poi-ooxml-3.9.jar" size="936648" download="eager" />
+    <jar href="lib\poi-ooxml-schemas-3.9.jar" size="4802621" download="eager" />
+    <jar href="lib\postgresql-9.4.1211.jar" size="678244" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="VgiplGstDataTransferTool" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="datatransferutility.DataTransferUtility"  name="VgiplGstDataTransferTool" />
+  <update check="always"/>
+</jnlp>

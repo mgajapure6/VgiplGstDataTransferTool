@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import java.lang.String?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.SplitPane?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?> 
+<?import javafx.collections.ObservableList?>
+
+<StackPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="900.0" prefHeight="500.0" prefWidth="900.0" style="-fx-font-size: 13px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datatransferutility.DataTransferUtilityMainController">
+   <children>
+      <VBox>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label style="-fx-font-size: 15px 18px; -fx-font-weight: bold;" text="VGIPL GST DATA TRANSFER TOOL" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="connectDbBtn" minWidth="90.0" mnemonicParsing="false" style="-fx-font-size: 13px;" text="Connection">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="editQueryBtn" minWidth="80.0" mnemonicParsing="false" style="-fx-font-size: 13px;" text="Edit Query">
+                            <cursor>
+                              <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Label minWidth="70.0" text="Select Query" />
+                        <ComboBox fx:id="querySelector" minWidth="150.0" prefWidth="150.0" promptText="Select Query" />
+                        <Button fx:id="loadDataBtn" minWidth="80.0" mnemonicParsing="false" style="-fx-background-color: #e84a5f; -fx-text-fill: #fff;" text="Load Table">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+<!--                        <Button fx:id="closeWindowBtn" mnemonicParsing="false" text="Close">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>-->
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+<!--            <HBox alignment="CENTER_RIGHT" spacing="5.0" style="-fx-font-size: 13px;">
+               <children>
+                  <Label fx:id="dataPostMsg" text="ergtgfdgdfgfdggfdgfdgfdgfdgtergtrfgdfgdfgdfgdfgdfgfdgfdg" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>-->
+            <VBox fx:id="tableViewBox" VBox.vgrow="ALWAYS">
+                <children>
+                    <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 13px;" VBox.vgrow="ALWAYS">
+                    </TableView>
+                </children>
+                <padding>
+                   <Insets left="5.0" right="5.0" />
+                </padding>
+             </VBox>
+<!--             <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 13px;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TableView>-->
+            <HBox spacing="10.0" style="-fx-font-size: 13px;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <ProgressIndicator fx:id="progressIndicator" prefHeight="30.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="ALWAYS">
+                    <children>
+                       <Label fx:id="dataPostMsg" styleClass="dataPostMsg" style="-fx-font-size: 14px;-fx-font-weight : bold;" text="ergtgfdgdfgfdggfdgfdgfdgfdgtergtrfgdfgdfgdfgdfgdfgfdgfdg" />
+                    </children>
+                    <VBox.margin>
+                       <Insets left="10.0" right="10.0" />
+                    </VBox.margin>
+                 </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                        <Label minWidth="70.0" style="-fx-font-size: 13px;" text="Select Month" />
+                        <ComboBox fx:id="monthSelect" maxHeight="29.0" maxWidth="120.0" minHeight="29.0" minWidth="120.0" prefHeight="29.0" prefWidth="120.0" promptText="Select Month" />
+                        <Label minWidth="70.0" style="-fx-font-size: 13px;" text="Select Year" />
+                        <ComboBox fx:id="yearSelect" maxHeight="29.0" maxWidth="120.0" minHeight="29.0" minWidth="120.0" prefHeight="29.0" prefWidth="120.0" promptText="Select Year" />
+                        <Label minWidth="70.0" style="-fx-font-size: 13px;" text="Transfer Date" />
+                        <DatePicker fx:id="datepicker" maxHeight="29.0" maxWidth="120.0" minHeight="29.0" minWidth="120.0" prefHeight="29.0" prefWidth="120.0" promptText="dd/MM/yyyy" style="-fx-font-size: 13px;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </DatePicker>
+                        <Button fx:id="clearTblBtn" minWidth="60.0" mnemonicParsing="false" text="Clear">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="exportExcelBtn" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" text="Export To Excel" />
+                        <Button fx:id="transferBtn" mnemonicParsing="false" style="-fx-background-color: #34a853; -fx-text-fill: #fff;" text="Transfer">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   
+  <JFXDialog fx:id="editQueryDialog">
+       <JFXDialogLayout style="-fx-background-color:#fff">
+           <body>
+               <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                       <HBox>
+                          <children>
+                             <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <children>
+                                   <Label text="Edit Query" textFill="#686868">
+                                      <font>
+                                         <Font name="System Bold" size="18.0" />
+                                      </font>
+                                   </Label>
+                                </children>
+                             </HBox>
+                             <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                <children>
+<!--                                   <Button fx:id="addNewQueryBtn" mnemonicParsing="false" text="Add New Query" />-->
+                                   <Button fx:id="closeQueryDialogBtn" mnemonicParsing="false" text="Close" />
+                                </children>
+                             </HBox>
+                          </children>
+                          <VBox.margin>
+                             <Insets bottom="10.0" left="0" right="0" top="0" />
+                          </VBox.margin>
+                       </HBox>
+                       <StackPane VBox.vgrow="ALWAYS">
+                          <children>
+                             <TabPane fx:id="queryTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                 
+                                 <Tab text="Sell" fx:id="sellTab">
+                                     <content>
+                                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                 <HBox spacing="10.0">
+                                                     <children>
+                                                         <Label prefHeight="22.0" prefWidth="150.0" text="Query Title :" />
+                                                         <TextField styleClass="title_f" editable="false" promptText="Enter Query Title" text="Sell" HBox.hgrow="ALWAYS" />
+                                                     </children>
+                                                 </HBox>
+                                                <HBox spacing="10.0">
+                                                     <children>
+                                                         <Label prefHeight="22.0" prefWidth="150.0" text="Query Type :" />
+                                                         <ComboBox styleClass="query_type_f" promptText="Select Query Type">
+                                                             <items>
+                                                                 <FXCollections fx:factory="observableArrayList">
+                                                                     <String fx:value="Query"/>
+                                                                    <String fx:value="Procedure"/>
+                                                                 </FXCollections>
+                                                            </items>
+                                                            <value>
+                                                                <String fx:value="Query" />
+                                                            </value>
+                                                         </ComboBox>
+                                                     </children>
+                                                 </HBox>
+                                                 <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                                                     <children>
+                                                         <Label prefHeight="22.0" prefWidth="150.0" text="Query Text :" />
+                                                         <TextArea styleClass="query_f" prefHeight="200.0" prefWidth="200.0" promptText="Enter Query Text" HBox.hgrow="ALWAYS" />
+                                                     </children>
+                                                 </HBox>
+                                                 <HBox alignment="TOP_RIGHT" spacing="10.0">
+                                                     <children>
+                                                         <TextField styleClass="flag_f" prefHeight="0.0" prefWidth="0.0" visible="false" text="S"/>
+                                                         <TextField styleClass="id_f" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                                         <Button fx:id="saveSellQueryBtn" mnemonicParsing="false" text="Save Query" />
+                                                     </children>
+                                                 </HBox>
+                                                 
+                                                 
+                                                 <HBox alignment="TOP_RIGHT">
+                                                     <children>
+                                                         <Label styleClass="err_lbl" />
+                                                     </children>
+                                                 </HBox>
+                                             </children>
+                                             <padding>
+                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                         </VBox>
+                                     </content>
+                                 </Tab>
+                               
+                                 <Tab text="Purchase" fx:id="purchaseTab">
+                                     <content>
+                                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                 <HBox spacing="10.0">
+                                                     <children>
+                                                         <Label prefHeight="22.0" prefWidth="150.0" text="Query Title :" />
+                                                         <TextField styleClass="title_f" editable="false" promptText="Enter Query Title" text="Purchase" HBox.hgrow="ALWAYS" />
+                                                     </children>
+                                                 </HBox>
+                                                 <HBox spacing="10.0">
+                                                     <children>
+                                                         <Label prefHeight="22.0" prefWidth="150.0" text="Query Type :" />
+                                                         <ComboBox styleClass="query_type_f" promptText="Select Query Type">
+                                                             <items>
+                                                                 <FXCollections fx:factory="observableArrayList">
+                                                                     <String fx:value="Query"/>
+                                                                    <String fx:value="Procedure"/>
+                                                                 </FXCollections>
+                                                            </items>
+                                                            <value>
+                                                                <String fx:value="Query" />
+                                                            </value>
+                                                         </ComboBox>
+                                                     </children>
+                                                 </HBox>
+                                                 <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                                                     <children>
+                                                         <Label prefHeight="22.0" prefWidth="150.0" text="Query Text :" />
+                                                         <TextArea styleClass="query_f" prefHeight="200.0" prefWidth="200.0" promptText="Enter Query Text" HBox.hgrow="ALWAYS" />
+                                                     </children>
+                                                 </HBox>
+                                                 <HBox alignment="TOP_RIGHT" spacing="10.0">
+                                                     <children>
+                                                         <TextField styleClass="id_f" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                                         <TextField styleClass="flag_f" prefHeight="0.0" prefWidth="0.0" visible="false" text="P"/>
+                                                         <Button fx:id="savePurchaseQueryBtn" mnemonicParsing="false" text="Save Query" />
+                                                     </children>
+                                                 </HBox>
+                                                 <HBox alignment="TOP_RIGHT">
+                                                     <children>
+                                                         <Label styleClass="err_lbl" />
+                                                     </children>
+                                                 </HBox>
+                                             </children>
+                                             <padding>
+                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                         </VBox>
+                                     </content>
+                                 </Tab>
+                             </TabPane>
+                          </children>
+                       </StackPane>
+                    </children>
+                 </VBox>
+           </body>
+       </JFXDialogLayout>
+   </JFXDialog>
+   
+   
+   <JFXDialog fx:id="confirmDialog">
+        <JFXDialogLayout style="-fx-background-color:#fff">
+            <body>
+                <VBox prefHeight="331.0" prefWidth="530.0" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                        <HBox style="-fx-border-width: 0 0 1 0; -fx-border-color: #ccc;">
+                            <children>
+                                <Label text="Please Confirm Connection" textFill="#363636">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox prefHeight="295.0" prefWidth="520.0" spacing="20.0">
+                            <children>
+                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" spacing="15.0">
+                                    <children>
+                                        <VBox layoutX="10.0" layoutY="10.0">
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="Database Server">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_db_type" styleClass="err" text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <ComboBox fx:id="databaseTypeSelect" prefHeight="30.0" prefWidth="764.0" promptText="Select Database Server" />
+                                            </children>
+                                        </VBox>
+                                        <VBox>
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="Host name">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_host" styleClass="err " text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <TextField fx:id="dbhost" promptText="Enter Host Name">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label styleClass="small" text="e.g. 127.0.0.1 etc" textFill="#797979" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="10.0" layoutY="10.0">
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="Username">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_username" styleClass="err" text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <TextField fx:id="userName" promptText="Enter Username">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="10.0" layoutY="10.0">
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="GST Number">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_gstn" styleClass="err" text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                    
+                                                </HBox>
+                                                <TextField fx:id="gstin_no" promptText="Enter GST Number">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </VBox>
+                                        <Label fx:id="connectingErr" styleClass="connectingErr" text=""/>
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" spacing="15.0">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="Database Name">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_db_name" styleClass="err" text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <TextField fx:id="dbname" promptText="Enter Databse Name">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </VBox>
+                                        <VBox>
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="Port Number">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_port" styleClass="err" text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <TextField fx:id="dbport" promptText="Enter Port number">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label styleClass="small" text="e.g. 1433" textFill="#797979" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="10.0" layoutY="10.0" prefWidth="250.0">
+                                            <children>
+                                                <HBox>
+                                                    <children>
+                                                        <Label text="Password">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label fx:id="err_password" styleClass="err" text="Required Field" textFill="#f20000" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <TextField fx:id="password" promptText="Enter password">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </VBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="450.0" spacing="10.0">
+                                            <children>
+                                                <Button fx:id="connectNowBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Connect">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Button>
+<!--                                                <Button fx:id="loadNowBtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #0e8eea;" text="Load Now" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                    <effect>
+                                                        <DropShadow height="0.24" radius="1.1025" width="6.17" />
+                                                    </effect>
+                                                    
+                                                </Button>-->
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </body>
+            <actions>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+    
+    
+    <JFXDialog fx:id="alertDialog">
+        <JFXDialogLayout style="-fx-background-color:#fff">
+            <heading>
+                <Label fx:id="alertDialogTitle" prefHeight="38.0" prefWidth="400.0" text="">
+                    <styleClass>
+                        <String fx:value="h4" />
+                        <String fx:value="title" />
+                    </styleClass>
+                </Label>
+            </heading>
+            <body>
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20" alignment="CENTER_RIGHT">
+                    <children>
+                        <Button fx:id="alertDialogBtn" mnemonicParsing="false" prefHeight="54.0" prefWidth="121.0" styleClass="btn-success" text="Ok">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </body>
+            <actions>
+
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+    
+    <JFXDialog fx:id="loginDialog">
+        <JFXDialogLayout style="-fx-background-color:#fff">
+            <body>
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="73.0" prefWidth="560.0" style="-fx-background-color: #ff9800;">
+                            <children>
+                                <Label text="GSTIN LOGIN" textFill="#101011">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <VBox>
+                            <children>
+                                <Label text="Gstin No.">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="loginUsergstin" editable="false" prefHeight="45.0" promptText="Enter Gstin Number" />
+                            </children>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0">
+                            <children>
+                                <Label text="User Name *">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="loginUsername" prefHeight="45.0" promptText="Enter User Name" />
+                            </children>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="55.0">
+                            <children>
+                                <Label text="Password *" >
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <PasswordField fx:id="loginUserpass" prefHeight="45.0" promptText="Enter Password" />
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                            <children>
+                                <ProgressIndicator fx:id="loginProgress" />
+                                <Button fx:id="loginBtn" mnemonicParsing="false" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #34a853; -fx-text-fill: #fff;" text="Login">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="loginCancelBtn" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: #ea4335; -fx-text-fill: #fff;" text="Cancel">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="errorMessage" alignment="CENTER" layoutX="30.0" layoutY="278.0" spacing="10.0">
+                            <children>
+                                <Label fx:id="ErrorMessage" textFill="#e81515">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </body>
+            <actions>
+
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+    
+    <JFXDialog fx:id="paramDialog">
+        <JFXDialogLayout style="-fx-background-color:#fff">
+            <heading>
+                <Label text="Bind Parameters" />
+            </heading>
+            <body>
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                        <VBox fx:id="paramListVbox">
+                            <children>
+                                
+                            </children>
+                        </VBox>
+<!--                        <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 13px;" VBox.vgrow="ALWAYS">
+                        </TableView>-->
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                            <children>
+                                <Button fx:id="paramSaveBtn" mnemonicParsing="false" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #34a853; -fx-text-fill: #fff;" text="Ok">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </body>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+</StackPane>
